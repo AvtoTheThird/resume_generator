@@ -21,6 +21,8 @@
 .piradi-info {
   padding-top: 15px;
   padding-left: 150px;
+  max-width: 200px;
+  margin: 0px;
 }
 
 textarea {
@@ -49,4 +51,6 @@ textarea {
   margin: 0px;
 }
 .down-lable {
+  font-size: 13px;
+  color: grey;
 }

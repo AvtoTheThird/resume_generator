@@ -20,7 +20,7 @@ function App() {
     setChemsShesaxeb(event.target.value);
   };
   return (
-    <div className="App">
+    <div>
       <div className="header">
         <h2 className="piradi-info">პირადი ინფო</h2>
         <div className="line"></div>

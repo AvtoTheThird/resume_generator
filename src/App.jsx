@@ -5,7 +5,8 @@ import Sawyisi_gverdi from "./gverdebi/sawyisi_gverdi";
 import Gamocdileba from "./gverdebi/gamocdileba";
 import Ganatleba from "./gverdebi/ganatleba";
 import Rezume from "./gverdebi/rezume";
-function App() {
+import Button from "./button";
+function App(props) {
   const [page, setPage] = useState(0);
   const PageNames = [
     "Sawyisi_gverdi",
@@ -28,8 +29,8 @@ function App() {
     }
   };
   return (
-    <div>
-      {PageDisplay()}
+    <div className="App">
+      <div>{PageDisplay()}</div>
       <button
         onClick={() => {
           setPage((currPage) => currPage + 1);
@@ -43,7 +44,7 @@ function App() {
         }}
       >
         წინა
-      </button>
+      </button>{" "}
     </div>
   );
 }
