@@ -1,22 +1,22 @@
 @font-face {
-  font-family: "fonti";
-  src: url("/src/assets/HelveticaNeue.ttc") format("truetype");
+  font-family: "helvetica";
+  src: url("./fonts/helvetica.ttc") format("truetype");
 }
 .flex-container {
   display: flex;
   flex-direction: row;
+  height: 800px;
 }
 .marcxena {
   padding-left: 120px;
   padding-top: 25px;
   width: 1100px;
-  border: 1px solid black;
+  height: 800px;
 }
 .marjvena {
   width: 822px;
   height: 1080px;
-  background-color: white;
-  border: 1px solid red;
+  background-color: #f9f9f9;
 }
 .piradi-info {
   padding-top: 15px;
@@ -42,7 +42,7 @@ textarea {
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   width: 800px;
   margin-bottom: 50px;
-  margin-left: 120px;
+  margin-left: 179px;
 }
 .saxeli-gvari {
   display: flex;
@@ -53,4 +53,24 @@ textarea {
 .down-lable {
   font-size: 13px;
   color: grey;
+}
+.knopkebi {
+  padding-left: 100px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.button-shemdegi {
+  background-color: #7949ff;
+  width: 260px;
+  height: 48px;
+  font-size: 25px;
+  border-radius: 15px;
+  text-align: center;
+  border: none;
+  color: white;
+}
+.veli {
+  margin-top: 35px;
+  margin-left: 25px;
 }

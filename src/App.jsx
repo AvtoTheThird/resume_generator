@@ -30,21 +30,25 @@ function App(props) {
   };
   return (
     <div className="App">
-      <div>{PageDisplay()}</div>
-      <button
-        onClick={() => {
-          setPage((currPage) => currPage + 1);
-        }}
-      >
-        შემდეგი
-      </button>
-      <button
-        onClick={() => {
-          setPage((currPage) => currPage - 1);
-        }}
-      >
-        წინა
-      </button>{" "}
+      {PageDisplay()}
+      <div className="knopkebi">
+        <button
+          className="button-shemdegi"
+          onClick={() => {
+            setPage((currPage) => currPage + 1);
+          }}
+        >
+          შემდეგი
+        </button>
+        <button
+          className="button-shemdegi"
+          onClick={() => {
+            setPage((currPage) => currPage - 1);
+          }}
+        >
+          წინა
+        </button>
+      </div>
     </div>
   );
 }

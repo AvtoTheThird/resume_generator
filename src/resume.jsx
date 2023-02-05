@@ -5,11 +5,12 @@ import Ticon from "../src/assets/T.png";
 import Micon from "../src/assets/@.png";
 import man from "../src/assets/foto.jpg";
 export default function Resume(props) {
+  console.log(props);
   return (
     <div>
       <div className="resume">
         <div className="piradi-info-1">
-          <h1 className="saxeli">{props.name}</h1>
+          <h1 className="saxeli">{props.name + props.lastName}</h1>
           <h3>
             <img className="icon" src={Micon} alt="" />
             {props.meili}

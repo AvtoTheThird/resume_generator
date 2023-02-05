@@ -7,6 +7,11 @@ function App() {
     setname(event.target.value);
   };
 
+  const [lastName, setLastName] = useState("");
+  const handleLastName = (event) => {
+    setLastName(event.target.value);
+  };
+
   const [meili, setMeili] = useState("");
   const handleMeili = (event) => {
     setMeili(event.target.value);
@@ -28,66 +33,89 @@ function App() {
       <div className="flex-container">
         <div className="marcxena">
           <div className="saxeli-gvari">
-            <div>
+            <div className="veli">
               <h4 className="up-lable">სახელი</h4>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="სახელი გვარი"
+                placeholder="სახელი"
                 required
                 onChange={handleChange}
                 value={name}
                 className="input-style-1"
               />
-              <p className="down-lablee">ქართულია სოები</p>
+              <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
-            <div>
-              <h4 className="up-lable">მეილი</h4>
+            <div className="veli">
+              <h4 className="up-lable">გვარი</h4>
               <input
                 type="text"
-                id="meili"
-                name="meili"
-                placeholder="მეილი"
-                onChange={handleMeili}
+                id="lastname"
+                name="lastname"
+                placeholder=" გვარი"
                 required
-                value={meili}
+                onChange={handleLastName}
+                value={lastName}
                 className="input-style-1"
               />
-              <p className="down-lable"> უმდა მთავრდებოდეს @redbery.com</p>
+              <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
           </div>
           <h2>
             imis atvirtva <button>atvirtva</button>
           </h2>
-
-          <textarea
-            type="text"
-            id="chems-shesaxeb"
-            name="chems-shesaxeb"
-            placeholder="chems-shesaxeb"
-            onChange={handleCemshSesaxeb}
-            required
-            value={chemsShesaxeb}
-          />
-          <label htmlFor="telefoni">teliki</label>
-          <input
-            type="text"
-            id="telefoni"
-            name="telefoni"
-            placeholder="ტელეფონი"
-            onChange={handleTelefoni}
-            required
-            className="input-style-1"
-            value={telefoni}
-          />
+          <div className="veli">
+            <h4 className="up-lable">ჩემს შესახებ (არასავალდებულო)</h4>
+            <textarea
+              type="text"
+              id="chems-shesaxeb"
+              name="chems-shesaxeb"
+              placeholder="chems-shesaxeb"
+              onChange={handleCemshSesaxeb}
+              required
+              value={chemsShesaxeb}
+            />
+          </div>
+          <div className="veli">
+            <h4 className="up-lable">ელ.ფოსტა</h4>
+            <input
+              type="text"
+              id="meili"
+              name="meili"
+              placeholder="მეილი"
+              onChange={handleMeili}
+              required
+              value={meili}
+              className="input-style-2"
+            />
+            <p className="down-lable"> უმდა მთავრდებოდეს @redbery.com-ით</p>
+          </div>
+          <div className="veli">
+            <h4 className="up-lable">ტელეფონი</h4>
+            <input
+              type="text"
+              id="telefoni"
+              name="telefoni"
+              placeholder="ტელეფონი"
+              onChange={handleTelefoni}
+              required
+              className="input-style-2"
+              value={telefoni}
+            />
+            <p className="down-lable">
+              უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს
+            </p>
+          </div>
         </div>
+
         <div className="marjvena">
           <Resume
             name={name}
             meili={meili}
             telefoni={telefoni}
             chemsShesaxeb={chemsShesaxeb}
+            lastName={lastName}
           />
         </div>
       </div>
