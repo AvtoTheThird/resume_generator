@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "fonti";
+  src: url("/src/assets/HelveticaNeue.ttc") format("truetype");
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+.marcxena {
+  padding-left: 120px;
+  padding-top: 25px;
+  width: 1100px;
+  border: 1px solid black;
+}
+.marjvena {
+  width: 822px;
+  height: 1080px;
+  background-color: white;
+  border: 1px solid red;
+}
+.piradi-info {
+  padding-top: 15px;
+  padding-left: 150px;
+}
+
+textarea {
+  width: 800px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  justify-content: center;
+}
+.line {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  width: 800px;
+  margin-bottom: 50px;
+  margin-left: 120px;
+}
+.saxeli-gvari {
+  display: flex;
+}
+.up-lable {
+  margin: 0px;
+}
+.down-lable {
+}

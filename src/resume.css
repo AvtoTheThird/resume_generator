@@ -1,0 +1,32 @@
+.piradi-info-1 {
+  padding-top: 68px;
+  padding-left: 80px;
+}
+.saxeli {
+  color: #f93b1d;
+}
+h1,
+p {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.chemsShesaxeb {
+  max-width: 380px;
+  word-wrap: break-word;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.resume {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.piradi-foto {
+  width: 246px;
+  height: 246px;
+  border-radius: 50%;
+  padding-top: 40px;
+  padding-right: 40px;
+}
