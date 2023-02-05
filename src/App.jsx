@@ -1,96 +1,49 @@
 import { useState } from "react";
 import "./App.css";
-import Resume from "./resume";
+import Zogadi_Informacia from "./gverdebi/zogadi_informacia";
+import Sawyisi_gverdi from "./gverdebi/sawyisi_gverdi";
+import Gamocdileba from "./gverdebi/gamocdileba";
+import Ganatleba from "./gverdebi/ganatleba";
+import Rezume from "./gverdebi/rezume";
 function App() {
-  const [name, setname] = useState("");
-  const handleChange = (event) => {
-    setname(event.target.value);
-  };
-
-  const [meili, setMeili] = useState("");
-  const handleMeili = (event) => {
-    setMeili(event.target.value);
-  };
-  const [telefoni, setTelefoni] = useState("");
-  const handleTelefoni = (event) => {
-    setTelefoni(event.target.value);
-  };
-  const [chemsShesaxeb, setChemsShesaxeb] = useState("");
-  const handleCemshSesaxeb = (event) => {
-    setChemsShesaxeb(event.target.value);
+  const [page, setPage] = useState(0);
+  const PageNames = [
+    "Sawyisi_gverdi",
+    "Zogadi_Informacia",
+    "Gamocdileba",
+    "Ganatleba",
+    "Rezume",
+  ];
+  const PageDisplay = () => {
+    if (page === 0) {
+      return <Sawyisi_gverdi />;
+    } else if (page === 1) {
+      return <Zogadi_Informacia />;
+    } else if (page === 2) {
+      return <Gamocdileba />;
+    } else if (page === 3) {
+      return <Ganatleba />;
+    } else if (page === 4) {
+      return <Rezume />;
+    }
   };
   return (
-    <div className="App">
-      <div className="header">
-        <h2 className="piradi-info">პირადი ინფო</h2>
-        <div className="line"></div>
-      </div>
-      <div className="flex-container">
-        <div className="marcxena">
-          <div className="saxeli-gvari">
-            <div>
-              <h4 className="up-lable">სახელი</h4>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="სახელი გვარი"
-                required
-                onChange={handleChange}
-                value={name}
-                className="input-style-1"
-              />
-              <p className="down-lablee">ქართულია სოები</p>
-            </div>
-            <div>
-              <h4 className="up-lable">მეილი</h4>
-              <input
-                type="text"
-                id="meili"
-                name="meili"
-                placeholder="მეილი"
-                onChange={handleMeili}
-                required
-                value={meili}
-                className="input-style-1"
-              />
-              <p className="down-lable"> უმდა მთავრდებოდეს @redbery.com</p>
-            </div>
-          </div>
-          <h2>
-            imis atvirtva <button>atvirtva</button>
-          </h2>
-
-          <textarea
-            type="text"
-            id="chems-shesaxeb"
-            name="chems-shesaxeb"
-            placeholder="chems-shesaxeb"
-            onChange={handleCemshSesaxeb}
-            required
-            value={chemsShesaxeb}
-          />
-          <label htmlFor="telefoni">teliki</label>
-          <input
-            type="text"
-            id="telefoni"
-            name="telefoni"
-            placeholder="ტელეფონი"
-            onChange={handleTelefoni}
-            required
-            className="input-style-1"
-            value={telefoni}
-          />
-        </div>
-        <div className="marjvena">
-          <Resume
-            name={name}
-            meili={meili}
-            telefoni={telefoni}
-            chemsShesaxeb={chemsShesaxeb}
-          />
-        </div>
-      </div>
+    <div>
+      {PageDisplay()}
+      <button
+        onClick={() => {
+          setPage((currPage) => currPage + 1);
+        }}
+      >
+        შემდეგი
+      </button>
+      <button
+        onClick={() => {
+          setPage((currPage) => currPage - 1);
+        }}
+      >
+        წინა
+      </button>
     </div>
   );
 }
