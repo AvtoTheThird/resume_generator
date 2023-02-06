@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import Resume from "../resume";
 function App() {
-  const [name, setname] = useState("");
+  const namee = JSON.parse(window.localStorage.getItem("name"));
+
+  const [name, setname] = useState(namee);
   const handleChange = (event) => {
     setname(event.target.value);
   };
@@ -24,6 +26,20 @@ function App() {
   const handleCemshSesaxeb = (event) => {
     setChemsShesaxeb(event.target.value);
   };
+  const [file, setFile] = useState();
+  function handlePhoto(e) {
+    // console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
+  useEffect(() => {
+    const data = window.localStorage.getItem("name");
+    if (data == null) setname(JSON.parse(data));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("name", JSON.stringify(name));
+  }, [name]);
+
   return (
     <div>
       <div className="header">
@@ -62,9 +78,21 @@ function App() {
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
           </div>
-          <h2>
-            imis atvirtva <button>atvirtva</button>
-          </h2>
+
+          <div className="atvirtva">
+            <h2>პირადი ფოტოს ატვირტვა</h2>
+            <label className="button-style-4" htmlFor="file">
+              ატვირთვა
+            </label>
+            <input
+              className="button-style-3"
+              type="file"
+              id="file"
+              onChange={handlePhoto}
+            />
+            <img value={file} />
+          </div>
+
           <div className="veli">
             <h4 className="up-lable">ჩემს შესახებ (არასავალდებულო)</h4>
             <textarea
@@ -116,6 +144,7 @@ function App() {
             telefoni={telefoni}
             chemsShesaxeb={chemsShesaxeb}
             lastName={lastName}
+            file={file}
           />
         </div>
       </div>

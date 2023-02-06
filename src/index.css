@@ -1,6 +1,9 @@
 @font-face {
-  font-family: "fonti";
-  src: url("/src/assets/HelveticaNeue.ttc") format("truetype");
+  font-family: "HelveticaNeue";
+  src: url(./fonts/HelveticaNeue.ttc);
+}
+* {
+  font-family: "HelveticaNeue";
 }
 :root {
   background-color: rgb(226, 226, 226);
@@ -21,10 +24,42 @@
   height: 48px;
   border-radius: 5px;
   font-size: 20px;
+  border: 1px solid #ccc;
+  padding: 0px 15px;
 }
 .input-style-2 {
   width: 800px;
   height: 48px;
   border-radius: 5px;
   font-size: 20px;
+  border: 1px solid #ccc;
+  padding: 0px 15px;
+}
+
+.button-style-4,
+label {
+  display: block;
+  position: relative;
+  width: 107px;
+  height: 30px;
+  border-radius: 7px;
+  background-color: #0e80bf;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+.button-style-3 {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.atvirtva {
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
 }

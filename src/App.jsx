@@ -6,6 +6,7 @@ import Gamocdileba from "./gverdebi/gamocdileba";
 import Ganatleba from "./gverdebi/ganatleba";
 import Rezume from "./gverdebi/rezume";
 import Button from "./button";
+import Resume from "./resume";
 function App(props) {
   const [page, setPage] = useState(0);
   const PageNames = [
@@ -31,6 +32,7 @@ function App(props) {
   return (
     <div className="App">
       {PageDisplay()}
+
       <div className="knopkebi">
         <button
           className="button-shemdegi"

@@ -1,4 +1,4 @@
-import "./sawyisi_gverdi.css";
+import "../App.css";
 import RedberryLogo from "../assets/RedberryLogo.png";
 import MeoreLogo from "../assets/BGlogo.png";
 export default function Sawyisi_gverdi() {
