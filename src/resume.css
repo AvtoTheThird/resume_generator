@@ -1,4 +1,6 @@
 .piradi-info-1 {
+  display: flex;
+
   padding-top: 68px;
   padding-left: 80px;
 }
@@ -19,14 +21,15 @@ p {
   height: 20px;
 }
 .resume {
-  display: flex;
-  justify-content: space-between;
   background-color: white;
 }
 .piradi-foto {
   width: 246px;
   height: 246px;
   border-radius: 50%;
-  padding-top: 40px;
   padding-right: 40px;
+}
+.gamocdileba {
+  padding-top: 40px;
+  padding-left: 80px;
 }

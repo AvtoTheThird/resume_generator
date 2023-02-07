@@ -37,18 +37,18 @@ function App(props) {
         <button
           className="button-shemdegi"
           onClick={() => {
-            setPage((currPage) => currPage + 1);
-          }}
-        >
-          შემდეგი
-        </button>
-        <button
-          className="button-shemdegi"
-          onClick={() => {
             setPage((currPage) => currPage - 1);
           }}
         >
           წინა
+        </button>
+        <button
+          className="button-shemdegi"
+          onClick={() => {
+            setPage((currPage) => currPage + 1);
+          }}
+        >
+          შემდეგი
         </button>
       </div>
     </div>

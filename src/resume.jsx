@@ -6,28 +6,42 @@ import Micon from "../src/assets/@.png";
 import man from "../src/assets/foto.jpg";
 export default function Resume(props) {
   let someVar = false;
-  if (props.chemsShesaxeb === "") someVar = true;
+  const namee = JSON.parse(window.localStorage.getItem("name"));
+  const lastnamee = JSON.parse(window.localStorage.getItem("lastname"));
+  const meilii = JSON.parse(window.localStorage.getItem("meili"));
+  const telefonii = JSON.parse(window.localStorage.getItem("telefoni"));
+  const chemsShesaxebb = JSON.parse(
+    window.localStorage.getItem("chemsShesaxeb")
+  );
+  const filee = JSON.parse(window.localStorage.getItem("file"));
+
+  console.log(lastnamee);
+  if (chemsShesaxebb === "") someVar = true;
   else someVar = false;
-  console.log(props);
+  // console.log(props);
   return (
-    <div>
-      <div className="resume">
-        <div className="piradi-info-1">
-          <h1 className="saxeli">{props.name + props.lastName}</h1>
+    <div className="resume">
+      <div className="piradi-info-1">
+        <div>
+          <h1 className="saxeli">{namee + " " + lastnamee}</h1>
           <h3>
             <img className="icon" src={Micon} alt="" />
-            {props.meili}
+            {meilii}
           </h3>
           <h3>
             <img className="icon" src={Ticon} alt="" />
-            {props.telefoni}
+            {telefonii}
           </h3>
           <h3 className="saxeli">{someVar ? "" : "ჩემს შესახებ"}</h3>
-          <p className="chemsShesaxeb">{props.chemsShesaxeb}</p>
+          <p className="chemsShesaxeb">{chemsShesaxebb}</p>
         </div>
-        <img className="piradi-foto" src={props.file} alt="" />
-        <h1>{props.tanamdeboba}</h1>
-        <h1>{props.damsaqmebeli}</h1>
+        <div>
+          <img className="piradi-foto" src={filee} alt="" />
+        </div>
+      </div>
+
+      <div className="gamocdileba">
+        <h4>{props.tanamdeboba + "," + props.damsaqmebeli}</h4>
       </div>
     </div>
   );

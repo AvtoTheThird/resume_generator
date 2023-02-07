@@ -47,6 +47,7 @@ export default function Gamocdileba() {
                 value={damsaqmebeli}
                 className={"input-style-2"}
               />
+              <p className="down-lable">მინიმუმ 2 სიმბოლო</p>
             </div>
           </div>
 

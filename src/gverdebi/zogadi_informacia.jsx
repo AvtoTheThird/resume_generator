@@ -3,30 +3,37 @@ import "../App.css";
 import Resume from "../resume";
 function App() {
   const namee = JSON.parse(window.localStorage.getItem("name"));
+  const lastnamee = JSON.parse(window.localStorage.getItem("lastname"));
+  const meilii = JSON.parse(window.localStorage.getItem("meili"));
+  const telefonii = JSON.parse(window.localStorage.getItem("telefoni"));
+  const chemsShesaxebb = JSON.parse(
+    window.localStorage.getItem("chemsShesaxeb")
+  );
+  const filee = JSON.parse(window.localStorage.getItem("file"));
 
   const [name, setname] = useState(namee);
   const handleChange = (event) => {
     setname(event.target.value);
   };
 
-  const [lastName, setLastName] = useState("");
+  const [lastName, setLastName] = useState(lastnamee);
   const handleLastName = (event) => {
     setLastName(event.target.value);
   };
 
-  const [meili, setMeili] = useState("");
+  const [meili, setMeili] = useState(meilii);
   const handleMeili = (event) => {
     setMeili(event.target.value);
   };
-  const [telefoni, setTelefoni] = useState("");
+  const [telefoni, setTelefoni] = useState(telefonii);
   const handleTelefoni = (event) => {
     setTelefoni(event.target.value);
   };
-  const [chemsShesaxeb, setChemsShesaxeb] = useState("");
+  const [chemsShesaxeb, setChemsShesaxeb] = useState(chemsShesaxebb);
   const handleCemshSesaxeb = (event) => {
     setChemsShesaxeb(event.target.value);
   };
-  const [file, setFile] = useState();
+  const [file, setFile] = useState(filee);
   function handlePhoto(e) {
     // console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
@@ -35,10 +42,22 @@ function App() {
     const data = window.localStorage.getItem("name");
     if (data == null) setname(JSON.parse(data));
   }, []);
+  useEffect(() => {
+    const data1 = window.localStorage.getItem("lastname");
+    if (data1 == null) setname(JSON.parse(data1));
+  }, []);
 
   useEffect(() => {
     window.localStorage.setItem("name", JSON.stringify(name));
-  }, [name]);
+    window.localStorage.setItem("lastname", JSON.stringify(lastName));
+    window.localStorage.setItem("meili", JSON.stringify(meili));
+    window.localStorage.setItem("telefoni", JSON.stringify(telefoni));
+    window.localStorage.setItem("chemsShesaxeb", JSON.stringify(chemsShesaxeb));
+    window.localStorage.setItem("file", JSON.stringify(file));
+  }, [name, lastName, meili, telefoni, chemsShesaxeb, file]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("lastname", JSON.stringify(lastName));
+  // }, [lastName]);
 
   return (
     <div>
@@ -138,14 +157,7 @@ function App() {
         </div>
 
         <div className="marjvena">
-          <Resume
-            name={name}
-            meili={meili}
-            telefoni={telefoni}
-            chemsShesaxeb={chemsShesaxeb}
-            lastName={lastName}
-            file={file}
-          />
+          <Resume />
         </div>
       </div>
     </div>
