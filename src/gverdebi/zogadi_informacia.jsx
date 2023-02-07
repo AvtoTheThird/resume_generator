@@ -38,14 +38,14 @@ function App() {
     // console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
-  useEffect(() => {
-    const data = window.localStorage.getItem("name");
-    if (data == null) setname(JSON.parse(data));
-  }, []);
-  useEffect(() => {
-    const data1 = window.localStorage.getItem("lastname");
-    if (data1 == null) setname(JSON.parse(data1));
-  }, []);
+  // useEffect(() => {
+  //   const data = window.localStorage.getItem("name");
+  //   if (data == null) setname(JSON.parse(data));
+  // }, []);
+  // useEffect(() => {
+  //   const data1 = window.localStorage.getItem("lastname");
+  //   if (data1 == null) setname(JSON.parse(data1));
+  // }, []);
 
   useEffect(() => {
     window.localStorage.setItem("name", JSON.stringify(name));
