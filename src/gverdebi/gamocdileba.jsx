@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Resume from "../resume";
 import "./sawyisi_gverdi.css";
 import "../App.css";
-
+import Insides from "./gamocdilebav2";
 export default function Gamocdileba() {
   const tanamdebobaa = JSON.parse(window.localStorage.getItem("tanamdeboba"));
   const damsaqmebelii = JSON.parse(window.localStorage.getItem("damsaqmebeli"));
@@ -31,6 +31,7 @@ export default function Gamocdileba() {
   const handleAgwera = (event) => {
     setAgwera(event.target.value);
   };
+
   useEffect(() => {
     window.localStorage.setItem("tanamdeboba", JSON.stringify(tanamdeboba));
     window.localStorage.setItem("damsaqmebeli", JSON.stringify(damsaqmebeli));
@@ -39,6 +40,11 @@ export default function Gamocdileba() {
     window.localStorage.setItem("agwera", JSON.stringify(agwera));
   }, [tanamdeboba, damsaqmebeli, dawyeba, damtavreba, agwera]);
 
+  const [Nofgamocdileba, setNofgamocdileba] = useState(1);
+  function gamocdileba() {
+    setNofgamocdileba((currNum) => currNum + 1);
+    console.log(Nofgamocdileba);
+  }
   return (
     <div>
       <div className="header">
@@ -102,6 +108,13 @@ export default function Gamocdileba() {
                 onChange={handleAgwera}
                 value={agwera}
               />
+            </div>
+
+            <div className="veli">
+              <button className="button-damateba" onClick={gamocdileba}>
+                გამოცდილების დამატება
+              </button>
+              {/* <div>{Array(Nofgamocdileba).fill(<Insides />)}</div> */}
             </div>
           </div>
 

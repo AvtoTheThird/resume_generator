@@ -22,7 +22,7 @@ export default function Resume() {
   const damtavrebaa = JSON.parse(window.localStorage.getItem("damtavreba"));
   const agweraa = JSON.parse(window.localStorage.getItem("agwera"));
 
-  console.log(dawyebaa);
+  // console.log(dawyebaa);
   if (chemsShesaxebb === "") someVar = true;
   else someVar = false;
 
