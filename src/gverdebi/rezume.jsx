@@ -1,7 +1,9 @@
+import Resume from "../resume";
+import "./rezume.css";
 export default function Rezume() {
   return (
-    <div>
-      <h1>Rezume</h1>
+    <div className="saboloo">
+      <Resume />
     </div>
   );
 }

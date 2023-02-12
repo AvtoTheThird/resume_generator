@@ -82,6 +82,8 @@ export default function Gamocdileba() {
               <p className="down-lable">მინიმუმ 2 სიმბოლო</p>
             </div>
             <div className="veli">
+              <h4 className="up-lable">დაწყების თარიღი</h4>
+
               <input
                 type="date"
                 className="input-style-1"
@@ -101,6 +103,8 @@ export default function Gamocdileba() {
               />
             </div>
             <div className="veli">
+              <h4 className="up-lable">აღწერ</h4>
+
               <textarea
                 type="text"
                 name="agwera"
@@ -108,13 +112,6 @@ export default function Gamocdileba() {
                 onChange={handleAgwera}
                 value={agwera}
               />
-            </div>
-
-            <div className="veli">
-              <button className="button-damateba" onClick={gamocdileba}>
-                გამოცდილების დამატება
-              </button>
-              {/* <div>{Array(Nofgamocdileba).fill(<Insides />)}</div> */}
             </div>
           </div>
 

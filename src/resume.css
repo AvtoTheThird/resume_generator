@@ -1,6 +1,6 @@
 .piradi-info-1 {
   display: flex;
-
+  justify-content: space-around;
   padding-top: 68px;
   padding-left: 80px;
 }
@@ -27,18 +27,22 @@ p {
   width: 246px;
   height: 246px;
   border-radius: 50%;
-  padding-right: 40px;
+  padding-right: 30px;
 }
 .gamocdileba {
   padding-top: 40px;
-  padding-left: 80px;
+  padding-left: 100px;
 }
 .ganatleba {
   padding-top: 40px;
-  padding-left: 80px;
+  padding-left: 100px;
 }
 .line--2 {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   max-width: 600px;
+}
+.gamocdilebisSesaxeb {
+  max-width: 600px;
+  word-wrap: break-word;
 }

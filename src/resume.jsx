@@ -43,13 +43,15 @@ export default function Resume() {
     <div className="resume">
       <div className="piradi-info-1">
         <div>
-          <h1 className="saxeli">{namee + " " + lastnamee}</h1>
+          <h1 className="saxeli">
+            {(namee ? namee : "") + " " + (lastnamee ? lastnamee : "")}
+          </h1>
           <h3>
-            <img className="icon" src={Micon} alt="" />
+            {meilii ? <img className="icon" src={Micon} alt="" /> : null}
             {meilii}
           </h3>
           <h3>
-            <img className="icon" src={Ticon} alt="" />
+            {telefonii ? <img className="icon" src={Ticon} alt="" /> : null}
             {telefonii}
           </h3>
           <h3 className="saxeli">{someVar ? "" : "ჩემს შესახებ"}</h3>
@@ -66,10 +68,18 @@ export default function Resume() {
         <h3 className="saxeli">{someVar1 ? "" : "გამოცდილება"}</h3>
 
         <h4 style={{ margin: "0px" }}>
-          {tanamdebobaa + ",  " + damsaqmebelii}
+          {(tanamdebobaa ? tanamdebobaa : "") +
+            ",  " +
+            (damsaqmebelii ? damsaqmebelii : "")}
         </h4>
-        <i style={{ color: "#909090" }}>{dawyebaa + " - " + damtavrebaa}</i>
-        <p style={{ padding: "8px" }}>{agweraa}</p>
+        <i style={{ color: "#909090" }}>
+          {(dawyebaa ? dawyebaa : "") +
+            " - " +
+            (damtavrebaa ? damtavrebaa : "")}
+        </i>
+        <p className="gamocdilebisSesaxeb" style={{ padding: "8px" }}>
+          {agweraa}
+        </p>
       </div>
 
       <div className="ganatleba">
@@ -77,9 +87,13 @@ export default function Resume() {
 
         <h3 className="saxeli">{someVar2 ? "" : "განათლება"}</h3>
 
-        <h4>{saswavlebelii + ", " + xarisxi1i}</h4>
+        <h4>
+          {(saswavlebelii ? saswavlebelii : "") +
+            ", " +
+            (xarisxi1i ? xarisxi1i : "")}
+        </h4>
         <i style={{ color: "#909090" }}>{swavlisDamtavrebaa}</i>
-        <p>{ganatlebisAgweraa}</p>
+        <p className="gamocdilebisSesaxeb">{ganatlebisAgweraa}</p>
       </div>
     </div>
   );
