@@ -8,7 +8,7 @@ import Rezume from "./gverdebi/rezume";
 import Button from "./button";
 import Resume from "./resume";
 function App(props) {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(2);
   const PageNames = [
     "Sawyisi_gverdi",
     "Zogadi_Informacia",

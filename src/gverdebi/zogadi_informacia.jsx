@@ -88,11 +88,15 @@ function App() {
                 required
                 onChange={handleChange}
                 value={name}
-                className={
-                  namee.length < 2 ? "input-style-1-red" : "input-style-1"
-                }
+                className="input-style-1"
+
+                // className={
+                //   (namee != null) & (namee.length < 2)
+                //     ? "input-style-1-red"
+                //     : "input-style-1"
+                // }
               />
-              <img src={namee.length < 2 ? warning : gud} alt="" />
+              {/* <img src={namee.length < 2 ? warning : gud} alt="" /> */}
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
 
@@ -106,11 +110,14 @@ function App() {
                 required
                 onChange={handleLastName}
                 value={lastName}
-                className={
-                  lastName.length < 2 ? "input-style-1-red" : "input-style-1"
-                }
+                className="input-style-1"
+                // className={
+                //   (lastName != null) & (lastName.length < 2)
+                //     ? "input-style-1-red"
+                //     : "input-style-1"
+                // }
               />
-              <img src={lastName.length < 2 ? warning : gud} alt="" />
+              {/* <img src={lastName.length < 2 ? warning : gud} alt="" /> */}
 
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
