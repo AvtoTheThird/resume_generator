@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import "../App.css";
 import Resume from "../resume";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import warning from "../assets/warning.png";
+import gud from "../assets/gud.png";
+
 function App() {
   const namee = JSON.parse(window.localStorage.getItem("name"));
   const lastnamee = JSON.parse(window.localStorage.getItem("lastname"));
@@ -59,6 +64,11 @@ function App() {
   //   window.localStorage.setItem("lastname", JSON.stringify(lastName));
   // }, [lastName]);
 
+  let emailRooles = new RegExp("[a-z0-9]+@redberry.com");
+  let telefoniRooles = new RegExp("\\++995");
+
+  // console.log(namee.length);
+  // emailRooles.test(meili);
   return (
     <div>
       <div className="header">
@@ -78,10 +88,14 @@ function App() {
                 required
                 onChange={handleChange}
                 value={name}
-                className="input-style-1"
+                className={
+                  namee.length < 2 ? "input-style-1-red" : "input-style-1"
+                }
               />
+              <img src={namee.length < 2 ? warning : gud} alt="" />
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
+
             <div className="veli">
               <h4 className="up-lable">გვარი</h4>
               <input
@@ -92,8 +106,12 @@ function App() {
                 required
                 onChange={handleLastName}
                 value={lastName}
-                className="input-style-1"
+                className={
+                  lastName.length < 2 ? "input-style-1-red" : "input-style-1"
+                }
               />
+              <img src={lastName.length < 2 ? warning : gud} alt="" />
+
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
           </div>
@@ -134,8 +152,12 @@ function App() {
               onChange={handleMeili}
               required
               value={meili}
-              className="input-style-2"
+              className={
+                emailRooles.test(meili) ? "input-style-2" : "input-style-2-red"
+              }
             />
+            <img src={emailRooles.test(meili) ? gud : warning} alt="" />
+
             <p className="down-lable"> უმდა მთავრდებოდეს @redbery.com-ით</p>
           </div>
           <div className="veli">
@@ -147,9 +169,15 @@ function App() {
               placeholder="ტელეფონი"
               onChange={handleTelefoni}
               required
-              className="input-style-2"
+              className={
+                telefoniRooles.test(telefoni)
+                  ? "input-style-2"
+                  : "input-style-2-red"
+              }
               value={telefoni}
             />
+            <img src={telefoniRooles.test(telefoni) ? gud : warning} alt="" />
+
             <p className="down-lable">
               უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს
             </p>

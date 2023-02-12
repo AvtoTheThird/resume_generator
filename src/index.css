@@ -27,6 +27,14 @@
   border: 1px solid #ccc;
   padding: 0px 15px;
 }
+.input-style-1-red {
+  width: 370px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #ff0000;
+  padding: 0px 15px;
+}
 .input-style-2 {
   width: 800px;
   height: 48px;
@@ -35,7 +43,14 @@
   border: 1px solid #ccc;
   padding: 0px 15px;
 }
-
+.input-style-2-red {
+  width: 800px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid #ff0000;
+  padding: 0px 15px;
+}
 .button-style-4,
 label {
   display: block;
