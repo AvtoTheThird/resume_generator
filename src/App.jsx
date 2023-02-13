@@ -38,13 +38,26 @@ function App(props) {
           className="page--reset"
           onClick={() => {
             setPage((currPage) => (currPage = 0));
+            window.localStorage.clear();
           }}
         >
           <img src={resetbutton} alt="" />
         </button>
       ) : null}
       {PageDisplay()}
-      {page < 4 ? (
+
+      {page == 0 ? (
+        <button
+          className="dawyeba"
+          onClick={() => {
+            setPage((currPage) => currPage + 1);
+          }}
+        >
+          რეზიუმეს დამატება
+        </button>
+      ) : null}
+
+      {page < 4 && page != 0 ? (
         <div className="knopkebi">
           <button
             className="button-shemdegi"

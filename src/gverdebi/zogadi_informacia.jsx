@@ -91,17 +91,21 @@ function App() {
                 // className="input-style-1"
 
                 className={
-                  namee != null && namee.length < 2
+                  name != null && name.length < 2
                     ? "input-style-1-red"
                     : "input-style-1"
                 }
               />
-              <img src={namee != null && namee.length ? gud : warning} alt="" />
+              <img
+                src={namee != null && namee.length > 1 ? gud : null}
+                alt=""
+              />
               <p className="down-lable">მინიმუმ 2 ასო, ქართული ასოები</p>
             </div>
 
             <div className="veli">
               <h4 className="up-lable">გვარი</h4>
+
               <input
                 type="text"
                 id="lastname"
@@ -118,7 +122,7 @@ function App() {
                 }
               />
               <img
-                src={lastName != null && lastName.length < 2 ? warning : gud}
+                src={lastName != null && lastName.length > 1 ? gud : null}
                 alt=""
               />
 
@@ -168,7 +172,7 @@ function App() {
             />
             <img src={emailRooles.test(meili) ? gud : warning} alt="" />
 
-            <p className="down-lable"> უმდა მთავრდებოდეს @redbery.com-ით</p>
+            <p className="down-lable"> უმდა მთავრდებოდეს @redberry.com-ით</p>
           </div>
           <div className="veli">
             <h4 className="up-lable">ტელეფონი</h4>
@@ -186,7 +190,14 @@ function App() {
               }
               value={telefoni}
             />
-            <img src={telefoniRooles.test(telefoni) ? gud : warning} alt="" />
+            <img
+              src={
+                telefoniRooles.test(telefoni) && telefoni.length == 13
+                  ? gud
+                  : warning
+              }
+              alt=""
+            />
 
             <p className="down-lable">
               უნდა აკმაყოფილებდეს ქართული მობილურის ნომრის ფორმატს
